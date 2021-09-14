@@ -3,6 +3,9 @@
     "*.cjson": "jsonc",
     "*.wxss": "css",
     "*.wxs": "javascript",
-    "acllib.h": "c"
+    "acllib.h": "c",
+    "stdio.h": "c",
+    "stdlib.h": "c",
+    "array.h": "c"
   }
 }
