@@ -21,6 +21,8 @@ typedef struct _list {
 Node* add1(Node * head, int number);
 void add2(Node ** head, int number);
 void add3(List * PList, int number);
+void showLinkList(List list);
+void findLinkList(List list, int number); 
 
 
 
@@ -40,6 +42,10 @@ int main()
       add3(&list, number); // 方法3
     }
   } while (number != -1);
+  showLinkList(list);
+  printf("请输入你要查找的数\n");
+  scanf("%d", &number);
+  findLinkList(list, number);
   return 0;
 }
 
@@ -108,5 +114,27 @@ void add3(List * Plist, int number)
   else
   { // 如果head不存在，则直接将新生成的直接作为head
     Plist->head = p;
+  }
+}
+void showLinkList(List list)
+{
+  Node *p;
+  for(p = list.head; p != NULL; p = p->next) {
+    printf("%d\n", p->value);
+  }
+}
+void findLinkList(List list,int number) 
+{
+  Node *p;
+  int isFound= 0;
+  for(p = list.head; p != NULL; p = p->next) {
+    if(p->value == number) {
+      printf("找到了\n");
+      isFound = 1;
+      break;
+    }
+  }
+  if(!isFound) {
+    printf("没找到\n");
   }
 }
