@@ -6,6 +6,7 @@
     "acllib.h": "c",
     "stdio.h": "c",
     "stdlib.h": "c",
-    "array.h": "c"
+    "array.h": "c",
+    "max.h": "c"
   }
 }
