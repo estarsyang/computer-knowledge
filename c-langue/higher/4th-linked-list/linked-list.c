@@ -18,6 +18,7 @@
     int number = 0;
     Node *head = NULL;
     do {
+      scanf("%d", &number);
       if(number != -1) {
         // 先生成一个新的
         Node *p = (Node *)malloc(sizeof(Node));
