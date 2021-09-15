@@ -46,6 +46,25 @@ int main()
   printf("请输入你要查找的数\n");
   scanf("%d", &number);
   findLinkList(list, number);
+  // 删除链表
+  Node *q; // 要删除的p之前的上一个节点
+  Node *p; // 假定p是要被删除的节点
+  for(q=NULL,p=list.head; p;q=p,p=p->next) {
+    if(p->value == number) {
+      if(q) {
+        q->next = p->next;
+      } else {
+        list.head = p->next;
+      }
+      free(p);
+      break;
+    }
+  }
+  // 删除整个链表
+  for(p=list.head;p;p=q) {
+    q=p->next;
+    free(p);
+  }
   return 0;
 }
 
